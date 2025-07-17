@@ -5,7 +5,6 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    overflow-y: hidden;
 }
 .btn{
     background-color: #D2426A;
@@ -340,9 +339,150 @@ hr{
 
 
 /* Adding Responsiveness to the WebPage. */
-@media  (max-width:756px) {
-    .nav-bar ul{
-        display: none;
-    }
-    
+.hamburger {
+display: none;
+font-size: 28px;
+color: #D2426A;
+background: none;
+border: none;
+cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+.nav-bar {
+flex-direction: row;
+justify-content: space-between;
+padding: 10px 20px;
+}
+.nav-bar ul {
+display: none;
+flex-direction: column;
+position: absolute;
+top: 60px;
+right: 20px;
+background-color: white;
+padding: 10px;
+border-radius: 8px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+z-index: 999;
+}
+
+.nav-bar ul.show {
+display: flex;
+}
+
+.hamburger {
+display: block;
+}
+
+.content {
+flex-direction: column;
+margin: 100px 20px;
+gap: 40px;
+align-items: center;
+}
+
+.text {
+width: 100%;
+}
+
+.container {
+width: 400px;
+height: 550px;
+}
+}
+
+/* 
+@media screen and (min-width: 1024px){
+.line1 {
+  top: 24.34%; left: 13.75%;
+  width: 79.4%;
+  transform: rotate(0deg);
+}
+
+.line2 {
+  top: 48%; left: 1%;
+  width: 53.5%;
+  transform: rotate(60deg); 
+}
+
+.line3 {
+  top: 20%; left: 10%;
+  width: 70%;
+  transform: rotate(-7.5deg); 
+}
+
+.line4 {
+  top: 46.5%; left: 35%;
+  width: 64%;
+  transform: rotate(-43deg); 
+}
+
+.line5 {
+  top: 28%; left: 5%;
+  width: 79%;
+  transform: rotate(-18.5deg);
+}
+
+.line6 {
+  top: 25%; left: 0%;
+  width: 46.5%;
+  transform: rotate(-42deg); 
+}
+
+.line7 {
+  top: 16.5%; left: 42%;
+  width: 48.75%;
+  transform: rotate(17deg);
+}
+
+.line8 {
+  top: 40%; left: 0%;
+  width: 62.5%;
+  transform: rotate(-112deg); 
+} 
+
+
+.outer1 { 
+    top: 23.5%; left: 10%;
+}
+.outer2 { 
+    top: 14%; left: 79.5%; 
+}
+.outer3 { 
+    top: 8%; left: 42%; 
+}
+.outer4 { 
+    top: 23.5%; left: 89.5%; 
+}
+.outer5 { 
+    top: 9%; left: 17.65%; 
+}
+.outer6{
+    top:7.35%; left: 39.5%;
+}
+.outer7{
+    top: 40% ; left: 5%;
+}
+.outer8{
+    top: 68%; left: 41.5%;
+}
+.outer9{
+    top: 8%; left: 65%;
+}
+.outer10{
+    top: 5%; left: 70%;
+}
+.outer11{
+    top: 2%; left: 68%;
+}
+.outer12{
+    top: 1%; left: 32%;
+}
+.outer13{
+    top: 0%; left: 56%;
+}
+.outer14{
+    top: 0%; left: 48%;
+}
+} */
