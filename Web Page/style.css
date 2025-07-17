@@ -1,0 +1,348 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.btn{
+    background-color: #D2426A;
+    border: solid 1px #D2426A;
+    font-size: 20px;
+    color: white;
+    box-shadow: #D2426A 0px 0px 12px;
+    padding: 10px 20px;
+    height: fit-content;
+    border-radius: 10px;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: #fff;
+    color: #D2426A;
+    box-shadow: #D2426A 0px 0px 12px inset;
+    transition: all 0.3s ease-in-out;
+}
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 90px;
+    padding-right: 45px;  
+    margin: 20px 0px;
+    font-size: 20px;
+    font-family: 'Arial, Helvetica, sans-serif';
+    font-weight: 600;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-bar ul{
+    display: flex;
+    font-size: 20px;
+    justify-content: space-evenly;
+    align-items: start;
+    list-style: none;
+    margin: 0;
+    counter-reset: count;
+}
+.nav-bar ul li{
+    counter-increment: count;
+}
+.nav-bar ul li a{
+    text-decoration: none;
+    color: #333;
+    padding: 0px 40px 0px 2px;
+}
+.nav-bar ul li::before{
+    content: counter(count, decimal-leading-zero) ". ";
+    margin-right: 3px;
+    color: #D2426A;
+    font-weight: bold;
+}
+.nav-bar ul li a:hover{
+    cursor: pointer;
+    color: #D2426A;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* css for content section */
+.content {
+    margin: 78px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    padding: 20px;
+    row-gap: 20px; 
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 40%;
+    gap: 20px;
+}
+.upper-text h1{
+    font-size: 40px;
+    font-weight: 700;
+    color: Black;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.upper-text p{
+    font-size: 14px;
+    color: black;
+    margin-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+hr{
+    border: none;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.253);
+    width: 100%;
+    margin: 0;
+}
+.lower-text{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.lower-text h2{
+    font-size: 18px;
+    font-weight: bolder;
+    color: #D2426A;
+    margin: 0;
+}
+.lower-text ul{
+    font-size: 14px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: disc;
+    padding-left: 20px;
+    max-width: 400px;
+}
+.lower-text li::marker {
+  color: #D2426A;
+}
+.lower-text ul li{
+    margin-bottom: 10px;
+    width: 50%;
+}
+.container{
+    width: 50%;
+    height: 550px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+.container .box{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(30deg);
+    width: 150px;
+    height: 150px;
+    transform-origin: center;
+}
+.container .box .face{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 0, 128, 0.1);
+    border: 1px solid rgba(255, 0, 128, 0.4);
+}
+
+.front  {
+     transform: translateZ(75px); 
+}
+.back   { 
+    transform: rotateY(180deg) translateZ(75px); 
+}
+.left   { 
+    transform: rotateY(-90deg) translateZ(75px); 
+}
+.right  {
+     transform: rotateY(90deg) translateZ(75px); 
+}
+.top    { 
+    transform: rotateX(90deg) translateZ(75px); 
+}
+.bottom { 
+    transform: rotateX(-90deg) translateZ(75px); 
+}
+
+.dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e91e63;
+    border: 3px solid #e91e63;
+    position: absolute;
+    animation: hardFall 0.6s cubic-bezier(0.8, 0, 0.3, 1.5) forwards;;
+}
+@keyframes hardFall{
+    0% { transform: translateY(-330px); 
+    opacity: 1;}
+    100%  { transform: translateY(0);
+    opacity: 1; }
+}
+
+.dot1 { 
+    top: 60%; left: 30%;
+    animation-delay: 0.5s;
+}
+.dot2 {
+    top: 60%; left: 45%; 
+    background-color: #421575;
+    border: 2px solid #421575;
+    animation-delay: 0.8;
+}
+.dot3 { 
+    top: 60%; left: 60%;
+    animation-delay: 1.3s; 
+}
+.dot4 {
+    top: 75%; left: 30%; 
+    background-color: #421575;
+    border: 2px solid #421575;
+    animation-delay: 1.8s;
+}
+.dot5 {
+    top: 75%; left: 45%;
+    animation-delay: 2.4s; 
+}
+.dot6 {
+    top: 75%; left: 60%; 
+    background-color: #421575;
+    border: 2px solid #421575;
+    animation-delay: 2.8s;
+}
+
+.container .outer-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #e91e63;
+    position: absolute;
+}
+.outer1 { 
+    top: 23.5%; left: 10%;
+}
+.outer2 { 
+    top: 14%; left: 79.5%; 
+}
+.outer3 { 
+    top: 8%; left: 42%; 
+}
+.outer4 { 
+    top: 23.5%; left: 89.5%; 
+}
+.outer5 { 
+    top: 9%; left: 17.65%; 
+}
+.outer6{
+    top:7.35%; left: 39.5%;
+}
+.outer7{
+    top: 40% ; left: 5%;
+}
+.outer8{
+    top: 68%; left: 41.5%;
+}
+.outer9{
+    top: 8%; left: 65%;
+}
+.outer10{
+    top: 5%; left: 70%;
+}
+.outer11{
+    top: 2%; left: 68%;
+}
+.outer12{
+    top: 1%; left: 32%;
+}
+.outer13{
+    top: 0%; left: 56%;
+}
+.outer14{
+    top: 0%; left: 48%;
+}
+
+
+.line {
+  position: absolute;
+  height: 1px;
+  background-color: #e91e627c;
+}
+
+
+.line1 {
+  top: 25%; left: 10%;
+  width: 80%;
+  transform: rotate(0deg);
+}
+
+.line2 {
+  top: 48%; left: 1%;
+  width: 53.5%;
+  transform: rotate(55deg); 
+}
+
+.line3 {
+  top: 20%; left: 10%;
+  width: 70%;
+  transform: rotate(-7.5deg); 
+}
+
+.line4 {
+  top: 46.5%; left: 35%;
+  width: 64%;
+  transform: rotate(-43deg); 
+}
+
+.line5 {
+  top: 28%; left: 5%;
+  width: 79%;
+  transform: rotate(-18.5deg);
+}
+
+.line6 {
+  top: 25%; left: 0%;
+  width: 46.5%;
+  transform: rotate(-42deg); 
+}
+
+.line7 {
+  top: 16.5%; left: 42%;
+  width: 48.75%;
+  transform: rotate(17deg);
+}
+
+.line8 {
+  top: 40%; left: 0%;
+  width: 62.5%;
+  transform: rotate(-112deg); 
+} 
+
+
+
+/* Adding Responsiveness to the WebPage. */
+@media  (max-width:756px) {
+    .nav-bar ul{
+        display: none;
+    }
+    
+}
